@@ -1,10 +1,12 @@
-package dayone;
+package solutions.dayone;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class PartOne {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+    public static void main(String[] args) throws FileNotFoundException {
+        Scanner in = new Scanner(new File("inputs/dayone"));
         int n = in.nextInt();
         int cnt = 0;
         while (in.hasNextInt()) {
@@ -13,7 +15,6 @@ public class PartOne {
                 cnt++;
             n = temp;
         }
-        in.close();
         System.out.println(cnt);
     }
 }

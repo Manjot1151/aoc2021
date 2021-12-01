@@ -1,4 +1,4 @@
-package dayone;
+package solutions.dayone;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class PartTwo {
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner in = new Scanner(new File("input.txt"));
+        Scanner in = new Scanner(new File("inputs/dayone"));
         List<Integer> a = new ArrayList<Integer>();
         int cnt = 0;
         while (in.hasNextInt()) {
