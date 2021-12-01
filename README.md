@@ -1,3 +1,2 @@
-# aoc2021
-Advent of Code 2021
-Solutions in Java
+# Advent of Code 2021
+Solutions in Java 
