@@ -7,13 +7,13 @@ import java.util.Scanner;
 public class PartOne {
     public static void main(String[] args) throws FileNotFoundException {
         Scanner in = new Scanner(new File("inputs/dayone"));
-        int n = in.nextInt();
+        int num = in.nextInt();
         int cnt = 0;
         while (in.hasNextInt()) {
             int temp = in.nextInt();
-            if (temp > n)
+            if (temp > num)
                 cnt++;
-            n = temp;
+            num = temp;
         }
         System.out.println(cnt);
     }
