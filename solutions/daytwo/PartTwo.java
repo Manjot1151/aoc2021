@@ -10,12 +10,10 @@ public class PartTwo {
         int depth = 0;
         int pos = 0;
         int aim = 0;
-        while (in.hasNextLine())
-        {
+        while (in.hasNextLine()) {
             String[] instruction = in.nextLine().split(" ");
             int n = Integer.parseInt(instruction[1]);
-            switch (instruction[0])
-            {
+            switch (instruction[0]) {
                 case "down":
                     aim += n;
                     break;
@@ -23,7 +21,7 @@ public class PartTwo {
                 case "up":
                     aim -= n;
                     break;
-                
+
                 case "forward":
                     pos += n;
                     depth += aim * n;
@@ -32,6 +30,6 @@ public class PartTwo {
         }
         System.out.println("Depth: " + depth);
         System.out.println("Pos: " + pos);
-        System.out.println("Product: " + depth*pos);
+        System.out.println("Product: " + depth * pos);
     }
 }

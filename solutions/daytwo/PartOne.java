@@ -9,12 +9,10 @@ public class PartOne {
         Scanner in = new Scanner(new File("inputs/daytwo"));
         int depth = 0;
         int pos = 0;
-        while (in.hasNextLine())
-        {
+        while (in.hasNextLine()) {
             String[] instruction = in.nextLine().split(" ");
             int n = Integer.parseInt(instruction[1]);
-            switch (instruction[0])
-            {
+            switch (instruction[0]) {
                 case "down":
                     depth += n;
                     break;
@@ -22,7 +20,7 @@ public class PartOne {
                 case "up":
                     depth -= n;
                     break;
-                
+
                 case "forward":
                     pos += n;
                     break;
@@ -30,6 +28,6 @@ public class PartOne {
         }
         System.out.println("Depth: " + depth);
         System.out.println("Pos: " + pos);
-        System.out.println("Product: " + depth*pos);
+        System.out.println("Product: " + depth * pos);
     }
 }
