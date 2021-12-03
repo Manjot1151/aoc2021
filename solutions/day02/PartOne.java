@@ -1,4 +1,4 @@
-package solutions.daytwo;
+package solutions.day02;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class PartOne {
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner in = new Scanner(new File("inputs/daytwo"));
+        Scanner in = new Scanner(new File("inputs/day02"));
         int depth = 0;
         int pos = 0;
         while (in.hasNextLine()) {

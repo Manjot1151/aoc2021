@@ -1,4 +1,4 @@
-package solutions.daythree;
+package solutions.day03;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,12 +8,12 @@ import java.util.Scanner;
 
 public class PartTwo {
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner in = new Scanner(new File("inputs/daythree"));
+        Scanner in = new Scanner(new File("inputs/day03"));
         List<String> binaryNums = new ArrayList<String>();
         while (in.hasNextLine())
             binaryNums.add(in.nextLine());
-
         List<String> binaryNums2 = new ArrayList<String>(binaryNums);
+        
         for (int i = 0; i < 12; i++) {
             if (binaryNums.size() == 1)
                 break;
