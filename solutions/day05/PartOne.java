@@ -5,7 +5,8 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class PartOne {
-    private static int size = 1000;
+
+    private static final int size = 1000;
 
     public static void main(String[] args) throws FileNotFoundException {
         Scanner in = new Scanner(new File("inputs/day05"));
