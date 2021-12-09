@@ -22,8 +22,9 @@ public class ImageGeneration {
         for (int i = 0; i < height; i++) {
             int[] heights = Arrays.stream(in.nextLine().split("")).mapToInt(Integer::parseInt).toArray();
             for (int j = 0; j < width; j++) {
-                int rgb = heights[j] * 28;
-                g.setColor(new Color(rgb, rgb, rgb));
+                int red = (9 - heights[j]) * 28;
+                int green = heights[j] * 28;
+                g.setColor(new Color(red, 0, green));
                 g.fillRect(i, j, width, height);
             }
         }
