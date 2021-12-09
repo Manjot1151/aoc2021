@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 import javax.imageio.ImageIO;
 
-public class ImageGeneration {
+public class HeightmapGeneration {
     private static int height = 100;
     private static int width = 100;
 
