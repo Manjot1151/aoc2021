@@ -22,9 +22,9 @@ public class HeightmapGeneration {
         for (int i = 0; i < height; i++) {
             int[] heights = Arrays.stream(in.nextLine().split("")).mapToInt(Integer::parseInt).toArray();
             for (int j = 0; j < width; j++) {
-                int red = (9 - heights[j]) * 28;
-                int green = heights[j] * 28;
-                g.setColor(new Color(red, 0, green));
+                int red = (1 + heights[j]) * 15;
+                int blue = (1 + heights[j]) * 25;
+                g.setColor(new Color(red, 0, blue));
                 g.fillRect(i, j, width, height);
             }
         }
