@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class PartTwo {
     public static void main(String[] args) throws FileNotFoundException {
@@ -13,32 +14,32 @@ public class PartTwo {
         List<Long> scores = new ArrayList<Long>();
         while (in.hasNextLine()) {
             String syntax = in.nextLine();
-            List<Character> opened = new ArrayList<Character>();
+            Stack<Character> opened = new Stack<Character>();
             for (char c : syntax.toCharArray()) {
                 if (c == '(' || c == '{' || c == '[' || c == '<') {
-                    opened.add(c);
+                    opened.push(c);
                 } else {
                     if (c != ')') {
-                        if (opened.get(opened.size() - 1) != c - 2) {
+                        if (opened.peek() != c - 2) {
                             opened.clear();
                             break;
                         } else {
-                            opened.remove(opened.size() - 1);
+                            opened.pop();
                         }
                     } else {
-                        if (opened.get(opened.size() - 1) != '(') {
+                        if (opened.peek() != '(') {
                             opened.clear();
                             break;
                         } else {
-                            opened.remove(opened.size() - 1);
+                            opened.pop();
                         }
                     }
                 }
             }
             if (opened.size() != 0) {
                 long score = 0;
-                for (int i = opened.size() - 1; i >= 0; i--) {
-                    char c = opened.get(i);
+                while (opened.size() != 0) {
+                    char c = opened.pop();
                     if (c != '(')
                         c += 2;
                     else

@@ -2,9 +2,8 @@ package solutions.day10;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class PartOne {
     public static void main(String[] args) throws FileNotFoundException {
@@ -12,24 +11,24 @@ public class PartOne {
         long errorSum = 0;
         while (in.hasNextLine()) {
             String syntax = in.nextLine();
-            List<Character> opened = new ArrayList<Character>();
+            Stack<Character> opened = new Stack<Character>();
             for (char c : syntax.toCharArray()) {
                 if (c == '(' || c == '{' || c == '[' || c == '<') {
-                    opened.add(c);
+                    opened.push(c);
                 } else {
                     if (c != ')') {
-                        if (opened.get(opened.size() - 1) != c - 2) {
+                        if (opened.peek() != c - 2) {
                             errorSum += (c == ']') ? 57 : c == '}' ? 1197 : 25137;
                             break;
                         } else {
-                            opened.remove(opened.size() - 1);
+                            opened.pop();
                         }
                     } else {
-                        if (opened.get(opened.size() - 1) != '(') {
+                        if (opened.peek() != '(') {
                             errorSum += 3;
                             break;
                         } else {
-                            opened.remove(opened.size() - 1);
+                            opened.pop();
                         }
                     }
                 }
