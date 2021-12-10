@@ -18,14 +18,14 @@ public class PartTwo {
                 if (c == '(' || c == '{' || c == '[' || c == '<') {
                     opened.add(c);
                 } else {
-                    if (c == '}' || c == ']' || c == '>') {
+                    if (c != ')') {
                         if (opened.get(opened.size() - 1) != c - 2) {
                             opened.clear();
                             break;
                         } else {
                             opened.remove(opened.size() - 1);
                         }
-                    } else if (c == ')') {
+                    } else {
                         if (opened.get(opened.size() - 1) != '(') {
                             opened.clear();
                             break;
@@ -39,7 +39,7 @@ public class PartTwo {
                 long score = 0;
                 for (int i = opened.size() - 1; i >= 0; i--) {
                     char c = opened.get(i);
-                    if (c == '{' || c == '[' || c == '<')
+                    if (c != '(')
                         c += 2;
                     else
                         c++;

@@ -17,14 +17,14 @@ public class PartOne {
                 if (c == '(' || c == '{' || c == '[' || c == '<') {
                     opened.add(c);
                 } else {
-                    if (c == '}' || c == ']' || c == '>') {
+                    if (c != ')') {
                         if (opened.get(opened.size() - 1) != c - 2) {
                             errorSum += (c == ']') ? 57 : c == '}' ? 1197 : 25137;
                             break;
                         } else {
                             opened.remove(opened.size() - 1);
                         }
-                    } else if (c == ')') {
+                    } else {
                         if (opened.get(opened.size() - 1) != '(') {
                             errorSum += 3;
                             break;
