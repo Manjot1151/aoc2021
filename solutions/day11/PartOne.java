@@ -28,12 +28,14 @@ public class PartOne {
                     flash(i, j);
                 }
             }
-            for (int i = 0; i < size; i++) {
-                for (int j = 0; j < size; j++) {
-                    if (energyLevels[i][j] >= 10) {
-                        energyLevels[i][j] = 0;
-                    }
-                }
+            if (flashed.size() == size * size) {
+                energyLevels = new int[size][size];
+                flashed.clear();
+                continue;
+            }
+            for (String s : flashed) {
+                int[] coord = Arrays.stream(s.split(" ")).mapToInt(Integer::parseInt).toArray();
+                energyLevels[coord[0]][coord[1]] = 0;
             }
             flashed.clear();
         }
